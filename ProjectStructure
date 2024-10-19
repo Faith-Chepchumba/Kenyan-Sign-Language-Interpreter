@@ -1,0 +1,65 @@
+Organize the Dataset
+
+/dataset
+├── /train
+│   ├── /A
+│   │   ├── image1.jpg
+│   │   ├── image2.jpg
+│   └── /B
+│       ├── image1.jpg
+│       ├── image2.jpg
+├── /test
+│   ├── /A
+│   │   ├── image1.jpg
+│   ├── /B
+│       ├── image1.jpg
+
+Folder Structure
+
+/project-root
+├── Python
+│   ├── sign_language_model.py            # Model training script
+│   ├── sign_language_recognition.py      # Real-time gesture recognition
+│   └── sign_language_model.h5            # Trained model
+├── Node.js Server
+│   ├── server.js                         # Express.js server
+│   ├── package.json                      # Node.js dependencies
+├── Frontend
+│   └── index.html                        # Web interface
+└── dataset                               # Kenyan Sign Language dataset
+├── /train                            # Training data
+│   ├── /A
+│   ├── /B
+│   └── ...
+├── /test                             # Testing data
+│   ├── /A
+│   ├── /B
+│   └── ...
+
+Final Project Structure
+
+/project-root
+
+├── Python
+
+│   ├── sign_language_model.py            # Training script
+
+│   ├── sign_language_recognition.py      # Real-time recognition script
+
+│   └── sign_language_model.h5            # Trained model
+
+├── Node.js Server
+
+│   ├── server.js                         # Express.js server
+
+│   ├── package.json                      # Node.js dependencies
+
+├── Frontend
+
+│   └── index.html                        # Web interface
+
+└── dataset                               # Kenyan Sign Language dataset
+
+├── /train                            # Training data (A-Z)
+
+├── /test                             # Testing data (A-Z)

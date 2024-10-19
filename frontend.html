@@ -1,0 +1,44 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Interpreter</title>
+    <style>
+        #video {
+            width: 640px;
+            height: 480px;
+        }
+        .prediction {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sign Language Interpreter</h1>
+    <video id="video" autoplay></video>
+    <div class="prediction">Prediction: <span id="predicted-gesture"></span></div>
+
+    <script>
+        // Display live video from the webcam
+        const video = document.getElementById('video');
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            });
+
+        // Fetch prediction from backend
+        function fetchPrediction() {
+            fetch('/predict')
+                .then(response => response.text())
+                .then(prediction => {
+                    document.getElementById('predicted-gesture').innerText = prediction;
+                });
+        }
+
+        setInterval(fetchPrediction, 1000); // Call the API every second to update prediction
+    </script>
+</body>
+</html>
